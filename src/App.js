@@ -18,6 +18,8 @@ function App() {
     </div>
   }
 
+  console.log(process.env.REACT_APP_CLIENT_ID);
+
   return (
     <>
     { isLoading && <Loader /> }

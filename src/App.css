@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Lato:wght@100;300;400;700&family=Montserrat:wght@200;300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+  --primary-bg: linear-gradient(180deg, #4285F4 0%, #286DE0 100%);
+  --secondary-bg: #f8faff;;
+  --primary-btn: #3E84F8;
+  --input-field-focus: #EAEAEA;
+  --input-field : #F5F5F5;
+  --primary-link-color: #346BD4;
+  --primary-font : #000000;
+  --secondary-font: #858585;
+  --login-btn : #4285F4;
+  --blue-underline: #3F84F8;
+  --gray-border-color: #E0E0E0;
+  --hero-text: white;
+  --green-font: #3cc952;
+  --green-bg : #e9f9eb;
+  --gray-underline : #D9D9D9;
+  --placeholder-color: #999CA0;
+  --guest-color: #EE8484;
+  --user-color : #98D89E;
+  --pants-color : #F6DC7D;
+
+  --font-poppins : 'Poppins', sans-serif; 
+  --font-montserrat : 'Montserrat', sans-serif;
+  --font-lato : 'Lato', sans-serif;
+  --font-figtree : 'Figtree', sans-serif;
+  --font-open-sans : 'Open Sans', sans-serif;
+
+  --gray-shadow : 3px 4px 11px 0px #62626226;
+  --loader-bg : #00000080;
+}
+/* font-family: 'Figtree', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+/* box-shadow: 4px 4px 20px 0px #0000001A;
+ */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: var(--secondary-bg);
+  font-family: var(--font-montserrat);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.gray-font{
+  color: var(--secondary-font);
+}
+
+button, a{
+  cursor: pointer;
+  transition: transform 0.3s ease-in;
+}
+
+button:active, a:focus{
+  transform: scale(0.8);
+  opacity: 0.9;
+}
+
+.container-loader{
+  background-color: var(--loader-bg);
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-family: var(--font-figtree);
+  z-index: 10;
 }
 
-.App-link {
-  color: #61dafb;
+.display-none{
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.loading-text{
+  font-size: 5em;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  from{
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  to{
+    opacity: 0;
   }
 }

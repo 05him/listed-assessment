@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom';
+
 import './App.css';
 
+import { Home } from './pages/Home/Home';
+import { Dashboard } from './pages/Dashboard/Dashboard';
+import { Error, BadAccess, NotFound } from './pages/Error/Error';
+
+import { useLogin } from './';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  const { isLoggedIn, isLoading } = useLogin();
+
+  const Loader = () => {
+    return <div className='container-loader' >
+        <div className='loading-text' > Loading... </div>
     </div>
+  }
+
+  return (
+    <>
+    { isLoading && <Loader /> }
+    <Routes>
+      <Route path='/' element={ <Home /> } />
+      <Route path='/dashboard' element={ isLoggedIn ? <Dashboard /> : <BadAccess /> } />
+      <Route path='/error' element={ <Error /> } />
+      <Route path='*' element={ <NotFound /> } />
+    </Routes>
+    </>
   );
 }
 

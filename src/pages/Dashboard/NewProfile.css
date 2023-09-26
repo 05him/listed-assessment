@@ -1,0 +1,166 @@
+@import url('../../App.css');
+
+.container-new-profile{
+    z-index:2;
+    background-color: var(--loader-bg);
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-figtree);
+}
+
+.new-profile-card{
+    width: 30%;
+    background-color: var(--hero-text);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.title-new-profile{
+    padding: 0.75em 1em;
+    border-bottom: 1px solid var(--gray-border-color);
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.cancel-sign{
+    background-color: transparent;
+    border: none;
+    font-size: 1.1em;
+    color: var(--secondary-font);
+    font-weight: 300;
+}
+
+.profile-details-type{
+    display: flex;
+    width: 100%;
+    padding: 0 1em;
+    margin: 1.25em 0;
+    justify-content: space-between;
+}
+
+.profile-details-type>div{
+    width: 45%;
+    text-align: center;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.underline-container{
+    width: 200%;
+    transition: transform 0.5s ease-in;
+}
+
+.underline-container span{
+    border-radius: 10px;
+    display: inline-block;
+    width: 50%;
+    height: 3px;
+}
+
+.underline-basic span:first-of-type, .underline-contact span:last-of-type{
+    background-color: var(--blue-underline);
+}
+
+.underline-basic span:last-of-type, .underline-contact span:first-of-type{
+    background-color: var(--gray-underline);
+}
+
+.profile-form{
+    padding: 0 1em 1em;
+    width: 200%;
+    display: flex;
+    gap: 4%;
+    transition: transform 0.5s ease-in;
+}
+
+.profile-form>div{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+.profile-form label{
+    display: block;
+}
+
+.profile-form input{
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid var(--gray-border-color);
+    font-size: 0.9em;
+    color: var(--placeholder-color);
+}
+
+.profile-form input::-webkit-input-placeholder {
+    color: var(--placeholder-color);
+}
+
+.btn-primary, .btn-secondary{
+    width: max-content;
+    padding: 0.7em 1em;
+    border-radius: 8px;
+    border: none;
+    margin: 0 0.5em;
+}
+
+.btn-primary{
+    color: var(--hero-text);
+    background-color: var(--primary-btn);
+}
+
+.btn-secondary{
+    background-color: transparent;
+    border: 1px solid var(--placeholder-color)
+}
+
+.form-btn-container{
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.show-next{
+    .profile-form{
+        transform: translateX(-50%);
+    }
+
+    .underline-container{
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width:1200px) {
+
+    .new-profile-card{
+        width: 35%;
+    }
+    
+}
+
+@media (max-width: 750px) {
+
+    .new-profile-card{
+        width: 60%;
+    }
+    
+}
+
+@media (max-width: 550px) {
+    
+    .new-profile-card{
+        width: 80%;
+    }
+
+}
